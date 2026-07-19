@@ -46,10 +46,18 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="relative bg-spaceBlack/90 dark:bg-spaceBlack/90 border-t border-white/10 pt-16 pb-8 overflow-hidden z-10">
+    <footer className={`relative border-t pt-16 pb-8 overflow-hidden z-10 transition-colors duration-300 ${
+      isLightTheme 
+        ? 'bg-slate-50 border-slate-200/60' 
+        : 'bg-spaceBlack/90 border-white/10'
+    }`}>
       {/* Background Aurora */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className={`absolute top-0 right-1/4 w-96 h-96 rounded-full blur-3xl pointer-events-none transition-colors duration-300 ${
+        isLightTheme ? 'bg-blue-100/30' : 'bg-blue-500/5'
+      }`} />
+      <div className={`absolute bottom-0 left-1/4 w-96 h-96 rounded-full blur-3xl pointer-events-none transition-colors duration-300 ${
+        isLightTheme ? 'bg-cyan-100/30' : 'bg-cyan-500/5'
+      }`} />
 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
         {/* Brand Column */}
@@ -60,11 +68,17 @@ export const Footer: React.FC = () => {
               alt="IoT Club Logo" 
               className="w-9 h-9 object-contain rounded-lg group-hover:scale-105 transition-transform duration-300"
             />
-            <span className="font-space font-bold text-xl tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+            <span className={`font-space font-bold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r transition-all duration-300 ${
+              isLightTheme 
+                ? 'from-slate-900 via-slate-800 to-slate-700' 
+                : 'from-white via-slate-200 to-slate-400'
+            }`}>
               IoT CLUB
             </span>
           </Link>
-          <p className="text-sm text-gray-400 leading-relaxed max-w-sm">
+          <p className={`text-sm leading-relaxed max-w-sm transition-colors duration-300 ${
+            isLightTheme ? 'text-slate-600' : 'text-gray-400'
+          }`}>
             Official IoT Club of VIT Bhopal University. Inspiring and enabling student innovators to build the connected, automated, and intelligent systems of tomorrow.
           </p>
           {/* Social icons */}
@@ -75,7 +89,11 @@ export const Footer: React.FC = () => {
                 href={soc.href}
                 target="_blank"
                 rel="noreferrer"
-                className={`p-2.5 rounded-xl border border-white/10 text-gray-400 transition-all duration-300 hover:-translate-y-1 hover:bg-white/5 ${soc.color}`}
+                className={`p-2.5 rounded-xl border transition-all duration-300 hover:-translate-y-1 ${
+                  isLightTheme 
+                    ? 'border-slate-200 text-slate-600 hover:bg-slate-100' 
+                    : 'border-white/10 text-gray-400 hover:bg-white/5'
+                } ${soc.color}`}
                 title={soc.name}
               >
                 {soc.icon}
@@ -86,10 +104,14 @@ export const Footer: React.FC = () => {
 
         {/* Quick Links Column */}
         <div className="flex flex-col gap-4">
-          <h4 className="font-space font-bold text-base text-white tracking-wide">
+          <h4 className={`font-space font-bold text-base tracking-wide transition-colors duration-300 ${
+            isLightTheme ? 'text-slate-800' : 'text-white'
+          }`}>
             Explore
           </h4>
-          <div className="grid grid-cols-2 gap-2 text-sm text-gray-400">
+          <div className={`grid grid-cols-2 gap-2 text-sm transition-colors duration-300 ${
+            isLightTheme ? 'text-slate-600' : 'text-gray-400'
+          }`}>
             <Link to="/about" className="hover:text-cyan-400 transition-colors">About Club</Link>
             <Link to="/domains" className="hover:text-cyan-400 transition-colors">Domains</Link>
             <Link to="/events" className="hover:text-cyan-400 transition-colors">Events</Link>
@@ -103,10 +125,14 @@ export const Footer: React.FC = () => {
 
         {/* Useful Pages Column */}
         <div className="flex flex-col gap-4">
-          <h4 className="font-space font-bold text-base text-white tracking-wide">
+          <h4 className={`font-space font-bold text-base tracking-wide transition-colors duration-300 ${
+            isLightTheme ? 'text-slate-800' : 'text-white'
+          }`}>
             Resources & Policies
           </h4>
-          <div className="flex flex-col gap-2.5 text-sm text-gray-400">
+          <div className={`flex flex-col gap-2.5 text-sm transition-colors duration-300 ${
+            isLightTheme ? 'text-slate-600' : 'text-gray-400'
+          }`}>
             <Link to="/login" className="hover:text-cyan-400 transition-colors">Student Login</Link>
             <Link to="/signup" className="hover:text-cyan-400 transition-colors">Register Portal</Link>
             <Link to="/contact" className="hover:text-cyan-400 transition-colors">Reach Out</Link>
@@ -117,10 +143,14 @@ export const Footer: React.FC = () => {
 
         {/* Newsletter Column */}
         <div className="flex flex-col gap-4">
-          <h4 className="font-space font-bold text-base text-white tracking-wide">
+          <h4 className={`font-space font-bold text-base tracking-wide transition-colors duration-300 ${
+            isLightTheme ? 'text-slate-800' : 'text-white'
+          }`}>
             Stay Connected
           </h4>
-          <p className="text-sm text-gray-400 leading-normal">
+          <p className={`text-sm leading-normal transition-colors duration-300 ${
+            isLightTheme ? 'text-slate-600' : 'text-gray-400'
+          }`}>
             Subscribe to receive event updates, hackathon announcements, and monthly hardware newsletters.
           </p>
           <form onSubmit={handleSubscribe} className="relative flex items-center mt-1">
@@ -130,7 +160,11 @@ export const Footer: React.FC = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-2.5 rounded-xl text-sm bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500/50 transition-all duration-300"
+              className={`w-full px-4 py-2.5 rounded-xl text-sm transition-all duration-300 focus:outline-none focus:border-cyan-500/50 ${
+                isLightTheme 
+                  ? 'bg-slate-100 border-slate-200 text-slate-800 placeholder-slate-400' 
+                  : 'bg-white/5 border-white/10 text-white placeholder-gray-500'
+              }`}
             />
             <button
               type="submit"
@@ -148,7 +182,11 @@ export const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+      <div className={`max-w-7xl mx-auto px-6 border-t pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs transition-colors duration-300 ${
+        isLightTheme 
+          ? 'border-slate-200/60 text-slate-500' 
+          : 'border-white/10 text-gray-500'
+      }`}>
         <p>© {new Date().getFullYear()} IoT Club, VIT Bhopal University. All Rights Reserved.</p>
         <p>Designed and Built by IoT Club Technical Team © <a href="https://www.linkedin.com/in/riteshvermadev/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">@rkv</a>.</p>
       </div>
