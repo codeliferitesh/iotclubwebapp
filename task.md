@@ -1,0 +1,40 @@
+# Implementation Tasks
+
+- [x] **Phase 1: Project Initialization & Directory Structure**
+  - [x] Initialize Vite + TypeScript project
+  - [x] Configure Tailwind CSS v3/v4 & PostCSS
+  - [x] Set up directories & type files
+- [x] **Phase 2: Design System & Core Styles**
+  - [x] Set up theme colors & glassmorphic classes in `index.css`
+  - [x] Add smooth scroll support & custom cursor spotlight
+  - [x] Create layout wrappers & navbar/footer
+- [x] **Phase 3: Firebase Configuration & Hooks**
+  - [x] Set up Firebase initialization file
+  - [x] Write Firestore hook helpers & TypeScript interfaces
+  - [x] Define Firestore security rules
+- [x] **Phase 4: Authentication System**
+  - [x] Create AuthContext (email/pass + Google Auth)
+  - [x] Implement `@vitbhopal.ac.in` domain lock
+  - [x] Set up role-based protected routes
+- [x] **Phase 5: Public Pages Construction**
+  - [x] Home Page with animated Hero, statistics, why join, domains, CTA
+  - [x] About Page with vision/mission, roadmap, and timeline
+  - [x] Domains Page with interactive maps & roadmaps
+  - [x] Events Page (Upcoming, Past, countdown timers, register button)
+  - [x] Projects & Blogs Pages
+  - [x] Gallery Page (Masonry layout, category filters, lightbox)
+  - [x] Team & Sponsors Pages
+  - [x] Contact Page with form submission
+- [x] **Phase 6: Student Dashboard**
+  - [x] Profile Settings (name, reg number, branch, year, skills)
+  - [x] Event Registrations list with QR Code display
+  - [x] Resources & Certificates download sections
+- [x] **Phase 7: Admin Dashboard**
+  - [x] Analytics & stats display (member counts, registrations)
+  - [x] Manage Panels, Team, Events, Projects, Blogs, Gallery
+  - [x] Email & Notification broadcaster
+  - [x] Event Attendance QR Reader simulator
+- [x] **Phase 8: Verification & Packaging**
+  - [x] Check TypeScript compilation
+  - [x] Verify build correctness
+  - [x] Complete walkthrough
