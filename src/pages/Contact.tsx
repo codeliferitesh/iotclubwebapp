@@ -55,8 +55,8 @@ export const Contact: React.FC = () => {
               
               <div>
                 <span className="text-[10px] font-mono text-cyan-400 uppercase block mb-1">EMAIL INQUIRIES</span>
-                <a href="mailto:stacksolveofficial@gmail.com" className="text-white font-semibold hover:underline block">
-                  stacksolveofficial@gmail.com
+                <a href="mailto:iotclub@vitbhopal.ac.in" className="text-white font-semibold hover:underline block">
+                  iotclub@vitbhopal.ac.in
                 </a>
               </div>
             </div>
@@ -67,7 +67,7 @@ export const Contact: React.FC = () => {
             <Sparkles className="w-8 h-8 text-cyan-400 mb-2" />
             <h4 className="font-space font-bold text-base text-white">Sponsorship Details</h4>
             <p className="text-xs text-gray-400">
-              For corporate alignments, hardware sponsorships, or tech talks, reach out directly to the PR team at <a href="mailto:stacksolveofficial@gmail.com" className="text-cyan-400 underline">stacksolveofficial@gmail.com</a>.
+              For corporate alignments, hardware sponsorships, or tech talks, reach out directly to the PR team at <a href="mailto:iotclub@vitbhopal.ac.in" className="text-cyan-400 underline">iotclub@vitbhopal.ac.in</a>.
             </p>
           </div>
         </div>
