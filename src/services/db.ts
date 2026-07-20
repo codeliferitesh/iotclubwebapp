@@ -27,6 +27,7 @@ import {
   ContactMessage, 
   AchievementItem 
 } from '../types';
+import facultyImage from '../faculty.jpeg';
 
 // ==========================================
 // PREPOPULATED MOCK DATA FOR DEMO MODE
@@ -476,7 +477,7 @@ const INITIAL_SPONSORS: Sponsor[] = [
 ];
 
 const INITIAL_TESTIMONIALS: Testimonial[] = [
-  { id: 'tst1', name: 'Prof. M. K. Nair', role: 'Faculty Coordinator, IoT Club', review: 'The IoT Club provides a state-of-the-art playground for student builders to transform electronics theories into actual products. Excellent initiative!', avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200' },
+  { id: 'tst1', name: 'Ashfaq Ahmad Najar', role: 'Faculty Coordinator, IoT Club', review: 'The IoT Club provides a state-of-the-art playground for student builders to transform electronics theories into actual products. Excellent initiative!', avatar: facultyImage },
   { id: 'tst2', name: 'Aarav Mehta', role: 'Alumni, Batch of 2025', review: 'Building projects in the IoT Club and presenting them at hackathons is exactly what secured my position as a hardware engineer at a robotics startup.', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200' }
 ];
 
