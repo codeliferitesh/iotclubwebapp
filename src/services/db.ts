@@ -216,6 +216,20 @@ const INITIAL_TEAM: TeamMember[] = [
     phone: '8739870401'
   },
   {
+    id: 't9_3',
+    name: 'Divyansh Gupta',
+    position: 'Core Member',
+    teamName: 'Technical',
+    bio: 'Embedded networks developer and micro-telemetry architect.',
+    photoUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200',
+    email: 'divyansh.25bai11274@vitbhopal.ac.in',
+    linkedin: 'https://linkedin.com',
+    github: 'https://github.com',
+    order: 14,
+    regNo: 'N/A',
+    phone: 'N/A'
+  },
+  {
     id: 't9_1',
     name: 'Aaryan Dwivedi',
     position: 'Member',
@@ -225,7 +239,7 @@ const INITIAL_TEAM: TeamMember[] = [
     email: 'aaryan.24bce11250@vitbhopal.ac.in',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com',
-    order: 14,
+    order: 15,
     regNo: '24BCE11250',
     phone: '9310906560'
   },
@@ -239,23 +253,9 @@ const INITIAL_TEAM: TeamMember[] = [
     email: 'riddhi.23bce10110@vitbhopal.ac.in',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com',
-    order: 15,
+    order: 16,
     regNo: '23BCE10110',
     phone: '9109356746'
-  },
-  {
-    id: 't9_3',
-    name: 'Divyansh Gupta',
-    position: 'Core Member',
-    teamName: 'Technical',
-    bio: 'Embedded networks developer and micro-telemetry architect.',
-    photoUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200',
-    email: 'divyansh.25bai11274@vitbhopal.ac.in',
-    linkedin: 'https://linkedin.com',
-    github: 'https://github.com',
-    order: 16,
-    regNo: 'N/A',
-    phone: 'N/A'
   },
   // Event Management Team
   {
@@ -683,7 +683,7 @@ const INITIAL_ACHIEVEMENTS: AchievementItem[] = [
 // Helper to initialize and retrieve items in Mock Mode
 const getMockItems = <T>(key: string, initial: T[]): T[] => {
   const stored = localStorage.getItem(key);
-  const versionKey = `${key}_v2_flush`;
+  const versionKey = `${key}_v3_flush`;
   const isUpdated = localStorage.getItem(versionKey);
 
   if (!stored || !isUpdated || JSON.parse(stored).length !== initial.length) {
