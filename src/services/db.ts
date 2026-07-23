@@ -25,7 +25,9 @@ import {
   Sponsor, 
   Testimonial, 
   ContactMessage, 
-  AchievementItem 
+  AchievementItem,
+  ResearchApplication,
+  RecruitmentApplication
 } from '../types';
 import facultyImage from '../faculty.jpeg';
 
@@ -34,6 +36,7 @@ import facultyImage from '../faculty.jpeg';
 // ==========================================
 
 const INITIAL_TEAM: TeamMember[] = [
+  // Panel Members
   {
     id: 't1',
     name: 'Rhythm Dangar',
@@ -41,10 +44,12 @@ const INITIAL_TEAM: TeamMember[] = [
     teamName: 'Panel',
     bio: 'IoT enthusiast and visionary, leading the club towards technical excellence and innovation.',
     photoUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200',
-    email: 'rhythm.dangar2022@vitbhopal.ac.in',
+    email: 'rhythm.23bsa10059@vitbhopal.ac.in',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com',
-    order: 1
+    order: 1,
+    regNo: '23BSA10059',
+    phone: '7987372745'
   },
   {
     id: 't2',
@@ -53,10 +58,12 @@ const INITIAL_TEAM: TeamMember[] = [
     teamName: 'Panel',
     bio: 'Embedded hardware architect. Dedicated to organizing hands-on technical labs and development projects.',
     photoUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200',
-    email: 'devansh.rai2022@vitbhopal.ac.in',
+    email: 'devansh.23bai10534@vitbhopal.ac.in',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com',
-    order: 2
+    order: 2,
+    regNo: '23BAI10534',
+    phone: '7007039587'
   },
   {
     id: 't3',
@@ -65,10 +72,12 @@ const INITIAL_TEAM: TeamMember[] = [
     teamName: 'Panel',
     bio: 'AI-IoT integration specialist. Focused on streamlining club activities and industry-academic alignment.',
     photoUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200',
-    email: 'pratyush.dubey2022@vitbhopal.ac.in',
+    email: 'pratyush.23bai10595@vitbhopal.ac.in',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com',
-    order: 3
+    order: 3,
+    regNo: '23BAI10595',
+    phone: '6393271604'
   },
   {
     id: 't4',
@@ -77,11 +86,14 @@ const INITIAL_TEAM: TeamMember[] = [
     teamName: 'Panel',
     bio: 'Project manager and robotics developer. Coordinating smooth execution of inter-university hackathons.',
     photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200',
-    email: 'sanyogita.rajput2022@vitbhopal.ac.in',
+    email: 'sanyogita.23bsa10106@vitbhopal.ac.in',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com',
-    order: 4
+    order: 4,
+    regNo: '23BSA10106',
+    phone: '6267761211'
   },
+  // Media & Photography Team
   {
     id: 't5',
     name: 'Smruti Sagar Sethy',
@@ -89,10 +101,13 @@ const INITIAL_TEAM: TeamMember[] = [
     teamName: 'Media & Photography',
     bio: 'Visual designer and videographer captures moments and crafts modern media contents.',
     photoUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200',
-    email: 'smrutisagar.sethy2022@vitbhopal.ac.in',
+    email: 'smruti.25bai11138@vitbhopal.ac.in',
     linkedin: 'https://linkedin.com',
-    order: 5
+    order: 5,
+    regNo: '25BAI11138',
+    phone: '8249813850'
   },
+  // Content Team
   {
     id: 't6',
     name: 'Maanya Dadlani',
@@ -100,10 +115,13 @@ const INITIAL_TEAM: TeamMember[] = [
     teamName: 'Content',
     bio: 'Creative copywriter and editor managing club news, documentation, and educational resources.',
     photoUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200',
-    email: 'maanya.dadlani22@vitbhopal.ac.in',
+    email: 'maanya.23bce10862@vitbhopal.ac.in',
     linkedin: 'https://linkedin.com',
-    order: 6
+    order: 6,
+    regNo: '23BCE10862',
+    phone: '6351941808'
   },
+  // Design Team
   {
     id: 't7',
     name: 'Umanshi Goyal',
@@ -111,9 +129,11 @@ const INITIAL_TEAM: TeamMember[] = [
     teamName: 'Design',
     bio: 'UX/UI designer creating dark-mode layouts, high-fidelity mockups, and glassmorphic graphics.',
     photoUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200',
-    email: 'umanshi.goyal2022@vitbhopal.ac.in',
+    email: 'umanshi.23bce11633@vitbhopal.ac.in',
     linkedin: 'https://linkedin.com',
-    order: 7
+    order: 7,
+    regNo: '23BCE11633',
+    phone: '8708924741'
   },
   {
     id: 't8',
@@ -122,10 +142,65 @@ const INITIAL_TEAM: TeamMember[] = [
     teamName: 'Design',
     bio: 'Framer/Figma designer building premium components and micro-interactions.',
     photoUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200',
-    email: 'smriti.singh2022@vitbhopal.ac.in',
+    email: 'smriti.23bai11385@vitbhopal.ac.in',
     linkedin: 'https://linkedin.com',
-    order: 8
+    order: 8,
+    regNo: '23BAI11385',
+    phone: '9471723727'
   },
+  {
+    id: 't8_1',
+    name: 'Pragya Tiwari',
+    position: 'Member',
+    teamName: 'Design',
+    bio: 'Creative design student, focus on user workflows and color palettes.',
+    photoUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=200',
+    email: 'pragya.24boe10027@vitbhopal.ac.in',
+    linkedin: 'https://linkedin.com',
+    order: 9,
+    regNo: '24BOE10027',
+    phone: '7007129950'
+  },
+  {
+    id: 't8_2',
+    name: 'Yukta Lilhare',
+    position: 'Member',
+    teamName: 'Design',
+    bio: 'Vector graphics and illustrator coordinator, mapping UI layouts.',
+    photoUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200',
+    email: 'yukta.25bmr10024@vitbhopal.ac.in',
+    linkedin: 'https://linkedin.com',
+    order: 10,
+    regNo: '25BMR10024',
+    phone: '8484030955'
+  },
+  {
+    id: 't8_3',
+    name: 'Khushi Kumari',
+    position: 'Member',
+    teamName: 'Design',
+    bio: 'UI design contributor, focuses on dark themes and visual assets.',
+    photoUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200',
+    email: 'khushi.24bcg10120@vitbhopal.ac.in',
+    linkedin: 'https://linkedin.com',
+    order: 11,
+    regNo: '24BCG10120',
+    phone: '8825330496'
+  },
+  {
+    id: 't8_4',
+    name: 'Aashi K. Singh',
+    position: 'Member',
+    teamName: 'Design',
+    bio: 'Typography and layout specialist, active contributor in poster designs.',
+    photoUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200',
+    email: 'aashi.24bsa10308@vitbhopal.ac.in',
+    linkedin: 'https://linkedin.com',
+    order: 12,
+    regNo: '24BSA10308',
+    phone: '9140180631'
+  },
+  // Technical Team
   {
     id: 't9',
     name: 'Ritesh Kumar Verma',
@@ -133,11 +208,56 @@ const INITIAL_TEAM: TeamMember[] = [
     teamName: 'Technical',
     bio: 'Fullstack developer, IoT architect, ESP32 and Edge AI enthusiast.',
     photoUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=200',
-    email: 'ritesh.kumar2022@vitbhopal.ac.in',
+    email: 'ritesh.25bai11426@vitbhopal.ac.in',
     linkedin: 'https://linkedin.com',
     github: 'https://github.com',
-    order: 9
+    order: 13,
+    regNo: '25BAI11426',
+    phone: '8739870401'
   },
+  {
+    id: 't9_1',
+    name: 'Aaryan Dwivedi',
+    position: 'Member',
+    teamName: 'Technical',
+    bio: 'Hardware prototyping member, firmware development on Arduino and STM32.',
+    photoUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200',
+    email: 'aaryan.24bce11250@vitbhopal.ac.in',
+    linkedin: 'https://linkedin.com',
+    github: 'https://github.com',
+    order: 14,
+    regNo: '24BCE11250',
+    phone: '9310906560'
+  },
+  {
+    id: 't9_2',
+    name: 'Riddhi Mhadgut',
+    position: 'Member',
+    teamName: 'Technical',
+    bio: 'Cloud server architecture helper, telemetry systems organizer.',
+    photoUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200',
+    email: 'riddhi.23bce10110@vitbhopal.ac.in',
+    linkedin: 'https://linkedin.com',
+    github: 'https://github.com',
+    order: 15,
+    regNo: '23BCE10110',
+    phone: '9109356746'
+  },
+  {
+    id: 't9_3',
+    name: 'Divyansh Gupta',
+    position: 'Core Member',
+    teamName: 'Technical',
+    bio: 'Embedded networks developer and micro-telemetry architect.',
+    photoUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200',
+    email: 'divyansh.25bai11274@vitbhopal.ac.in',
+    linkedin: 'https://linkedin.com',
+    github: 'https://github.com',
+    order: 16,
+    regNo: 'N/A',
+    phone: 'N/A'
+  },
+  // Event Management Team
   {
     id: 't10',
     name: 'Shagun Singh',
@@ -145,9 +265,11 @@ const INITIAL_TEAM: TeamMember[] = [
     teamName: 'Event Management',
     bio: 'Operations and logistics coordinator planning technical bootcamps and speaker sessions.',
     photoUrl: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=200',
-    email: 'shagun.singh22@vitbhopal.ac.in',
+    email: 'shagun.24bcy10379@vitbhopal.ac.in',
     linkedin: 'https://linkedin.com',
-    order: 10
+    order: 17,
+    regNo: '24BCY10379',
+    phone: '8529843670'
   },
   {
     id: 't11',
@@ -156,10 +278,26 @@ const INITIAL_TEAM: TeamMember[] = [
     teamName: 'Event Management',
     bio: 'IoT workshop organizer helping with component management and venue setups.',
     photoUrl: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&q=80&w=200',
-    email: 'manthan.chandra2022@vitbhopal.ac.in',
+    email: 'manthan.25bai10289@vitbhopal.ac.in',
     linkedin: 'https://linkedin.com',
-    order: 11
+    order: 18,
+    regNo: '25BAI10289',
+    phone: '8085064733'
   },
+  {
+    id: 't11_1',
+    name: 'Shivya Rao',
+    position: 'Member',
+    teamName: 'Event Management',
+    bio: 'Event execution coordinator, handles stage setup and guest coordination.',
+    photoUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200',
+    email: 'shivya.24bcy10203@vitbhopal.ac.in',
+    linkedin: 'https://linkedin.com',
+    order: 19,
+    regNo: '24BCY10203',
+    phone: '9098309689'
+  },
+  // Social Media Team
   {
     id: 't12',
     name: 'Deepanshu',
@@ -167,10 +305,13 @@ const INITIAL_TEAM: TeamMember[] = [
     teamName: 'Social Media',
     bio: 'Growth hacker managing Instagram and LinkedIn outreach to expand club membership.',
     photoUrl: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=200',
-    email: 'deepanshu22@vitbhopal.ac.in',
+    email: 'deepanshu.25bai11163@vitbhopal.ac.in',
     linkedin: 'https://linkedin.com',
-    order: 12
+    order: 20,
+    regNo: '25BAI11163',
+    phone: '7497861688'
   },
+  // PR & Outreach Team
   {
     id: 't13',
     name: 'Saurish Modgil',
@@ -178,9 +319,11 @@ const INITIAL_TEAM: TeamMember[] = [
     teamName: 'PR & Outreach',
     bio: 'Public relations representative securing sponsorships and coordinating industry expert panels.',
     photoUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200',
-    email: 'saurish.modgil2022@vitbhopal.ac.in',
+    email: 'saurish.25bai10891@vitbhopal.ac.in',
     linkedin: 'https://linkedin.com',
-    order: 13
+    order: 21,
+    regNo: '25BAI10891',
+    phone: '6280298084'
   }
 ];
 
@@ -565,8 +708,25 @@ export const dbService = {
     if (isDemoMode) {
       return getMockItems<TeamMember>('iot_mock_team', INITIAL_TEAM);
     }
-    const snap = await getDocs(query(collection(db, 'team'), orderBy('order')));
-    return snap.docs.map(d => ({ id: d.id, ...d.data() } as TeamMember));
+    try {
+      const snap = await getDocs(query(collection(db, 'team'), orderBy('order')));
+      if (snap.empty) {
+        console.log('Firestore team collection is empty. Seeding local members to Firestore and returning mock fallback...');
+        // Try seeding Firestore in the background
+        INITIAL_TEAM.forEach(async (member) => {
+          try {
+            await setDoc(doc(db, 'team', member.id), member);
+          } catch (e) {
+            console.error('Failed to seed team member:', member.name, e);
+          }
+        });
+        return INITIAL_TEAM;
+      }
+      return snap.docs.map(d => ({ id: d.id, ...d.data() } as TeamMember));
+    } catch (err) {
+      console.error('Error fetching Firestore team directory, using mock fallback:', err);
+      return INITIAL_TEAM;
+    }
   },
   
   saveTeamMember: async (member: TeamMember): Promise<void> => {
@@ -899,6 +1059,28 @@ export const dbService = {
     } catch (err) {
       console.error('Error updating Firestore Instagram telemetry cache:', err);
     }
+  },
+
+  // --- Research Applications ---
+  submitResearchApplication: async (app: ResearchApplication): Promise<void> => {
+    if (isDemoMode) {
+      const list = getMockItems<ResearchApplication>('iot_mock_research_applications', []);
+      list.push(app);
+      saveMockItems('iot_mock_research_applications', list);
+      return;
+    }
+    await setDoc(doc(db, 'research_applications', app.id), app);
+  },
+
+  // --- Recruitment Applications ---
+  submitRecruitmentApplication: async (app: RecruitmentApplication): Promise<void> => {
+    if (isDemoMode) {
+      const list = getMockItems<RecruitmentApplication>('iot_mock_recruitment_applications', []);
+      list.push(app);
+      saveMockItems('iot_mock_recruitment_applications', list);
+      return;
+    }
+    await setDoc(doc(db, 'recruitment_applications', app.id), app);
   }
 };
 export default dbService;

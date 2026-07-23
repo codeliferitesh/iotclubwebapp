@@ -83,6 +83,18 @@ service cloud.firestore {
       allow read, update, delete: if isAdmin();
     }
 
+    // Research applications - anyone can create, only admin can read/write
+    match /research_applications/{appId} {
+      allow create: if true;
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Recruitment applications - anyone can create, only admin can read/write
+    match /recruitment_applications/{appId} {
+      allow create: if true;
+      allow read, update, delete: if isAdmin();
+    }
+
     // Newsletter subscriptions - anyone can create
     match /newsletter/{subId} {
       allow create: if true;

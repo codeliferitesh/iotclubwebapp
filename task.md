@@ -15,7 +15,6 @@
 - [x] **Phase 4: Authentication System**
   - [x] Create AuthContext (email/pass + Google Auth)
   - [x] Implement `@vitbhopal.ac.in` domain lock
-  - [x] Set up role-based protected routes
 - [x] **Phase 5: Public Pages Construction**
   - [x] Home Page with animated Hero, statistics, why join, domains, CTA
   - [x] About Page with vision/mission, roadmap, and timeline

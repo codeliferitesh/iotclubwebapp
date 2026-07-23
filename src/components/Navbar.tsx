@@ -49,10 +49,13 @@ export const Navbar: React.FC = () => {
     { name: 'Domains', path: '/domains' },
     { name: 'Events', path: '/events' },
     { name: 'Projects', path: '/projects' },
+    { name: 'Research', path: '/research' },
+    { name: 'Members', path: '/members' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Blogs', path: '/blogs' },
     { name: 'Resources', path: '/resources' },
     { name: 'Achievements', path: '/achievements' },
+    { name: 'Recruitment', path: '/requirements' },
     { name: 'Contact', path: '/contact' }
   ];
 
@@ -86,12 +89,12 @@ export const Navbar: React.FC = () => {
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden xl:flex items-center gap-2.5 2xl:gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
-              className={`relative text-sm font-medium transition-colors hover:text-cyan-400 ${
+              className={`relative text-xs xl:text-sm font-medium transition-colors hover:text-cyan-400 ${
                 isActive(link.path) 
                   ? 'text-cyan-400' 
                   : 'text-gray-300 dark:text-gray-400'
@@ -110,7 +113,7 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Quick Actions */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden xl:flex items-center gap-4">
           {/* Theme Toggler */}
           <button
             onClick={toggleTheme}
@@ -149,7 +152,7 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile Menu Controls */}
-        <div className="flex lg:hidden items-center gap-3">
+        <div className="flex xl:hidden items-center gap-3">
           <button
             onClick={toggleTheme}
             className="p-2 rounded-lg border border-white/10 text-gray-400"
@@ -172,7 +175,7 @@ export const Navbar: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden w-full bg-spaceBlack/95 dark:bg-spaceBlack/95 border-b border-white/10 overflow-hidden"
+            className="xl:hidden w-full bg-spaceBlack/95 dark:bg-spaceBlack/95 border-b border-white/10 max-h-[80vh] overflow-y-auto"
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (

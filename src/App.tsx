@@ -11,12 +11,14 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Domains from './pages/Domains';
 import Events from './pages/Events';
-import Team from './pages/Team';
 import Projects from './pages/Projects';
 import Blogs from './pages/Blogs';
 import Resources from './pages/Resources';
 import Achievements from './pages/Achievements';
 import Contact from './pages/Contact';
+import Requirements from './pages/Requirements';
+import Research from './pages/Research';
+import Members from './pages/Members';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Login from './pages/Login';
@@ -59,12 +61,14 @@ export const App: React.FC = () => {
                 <Route path="/about" element={<About />} />
                 <Route path="/domains" element={<Domains />} />
                 <Route path="/events" element={<Events />} />
-                <Route path="/team" element={<Team />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/blogs" element={<Blogs />} />
                 <Route path="/resources" element={<Resources />} />
                 <Route path="/achievements" element={<Achievements />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/requirements" element={<Requirements />} />
+                <Route path="/research" element={<Research />} />
+                <Route path="/members" element={<Members />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
                 <Route path="/login" element={<Login />} />

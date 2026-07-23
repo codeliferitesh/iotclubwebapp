@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Github, ExternalLink, Cpu, Search, AlertCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Github, ExternalLink, Cpu, Search, AlertCircle, Sparkles, ArrowRight } from 'lucide-react';
 import { dbService } from '../services/db';
 import { ProjectItem } from '../types';
 
@@ -153,6 +154,30 @@ export const Projects: React.FC = () => {
           ))}
         </div>
       )}
+
+      {/* Start Research Call to Action Card */}
+      <div className="mt-20 max-w-4xl mx-auto border-t border-white/10 pt-16 text-center">
+        <div className="p-8 sm:p-12 rounded-3xl glass-premium border border-white/5 bg-gradient-to-r from-blue-900/10 via-cyan-900/10 to-spaceBlack relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="text-left max-w-lg">
+            <span className="text-xs font-bold text-cyan-400 tracking-widest uppercase flex items-center gap-1.5 mb-3">
+              <Sparkles className="w-3.5 h-3.5 text-cyan-400" /> RESEARCH OPPORTUNITIES
+            </span>
+            <h2 className="font-space font-bold text-2xl sm:text-3xl text-white mb-3">
+              Interested in Research?
+            </h2>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              We collaborate on peer-reviewed papers, patents, and system prototypes. Align with our core technical mentors to start your research journey with us.
+            </p>
+          </div>
+          <Link 
+            to="/research" 
+            className="px-6 py-3.5 font-bold text-sm text-white rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:shadow-lg hover:shadow-cyan-500/25 active:scale-[0.99] transition-all flex items-center gap-2 whitespace-nowrap shrink-0"
+          >
+            Start Research <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

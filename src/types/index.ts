@@ -23,7 +23,37 @@ export interface TeamMember {
   linkedin: string;
   github?: string;
   order: number;
+  regNo?: string;
+  phone?: string;
 }
+
+export interface ResearchApplication {
+  id: string;
+  name: string;
+  email: string;
+  regNo: string;
+  phone: string;
+  researchArea: string;
+  proposalTitle: string;
+  abstract: string;
+  createdAt: string;
+  status: 'pending' | 'reviewed' | 'accepted' | 'rejected';
+}
+
+export interface RecruitmentApplication {
+  id: string;
+  name: string;
+  email: string;
+  regNo: string;
+  phone: string;
+  teamName: string;
+  position: string;
+  portfolioUrl?: string;
+  sop: string;
+  createdAt: string;
+  status: 'pending' | 'under_review' | 'shortlisted' | 'rejected';
+}
+
 
 export type EventType = 'workshop' | 'hackathon' | 'bootcamp' | 'seminar' | 'guest-lecture';
 

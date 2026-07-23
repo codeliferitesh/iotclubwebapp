@@ -21,16 +21,21 @@ export const Team: React.FC = () => {
     fetchTeam();
   }, []);
 
-  const panelMembers = team.filter(m => m.teamName === 'Panel');
+  // Filter for Leads view (only positions of leadership)
+  const leads = team.filter(m => 
+    ['President', 'Vice-President', 'Chairperson', 'Joint Secretary', 'Lead', 'Co-Lead'].includes(m.position)
+  );
   
-  // Group rest of the members by their team name
-  const teamsGrouped: { [key: string]: TeamMember[] } = {};
-  team.forEach(m => {
+  const panelLeads = leads.filter(m => m.teamName === 'Panel');
+  
+  // Group leads by their team name
+  const teamLeadsGrouped: { [key: string]: TeamMember[] } = {};
+  leads.forEach(m => {
     if (m.teamName === 'Panel') return;
-    if (!teamsGrouped[m.teamName]) {
-      teamsGrouped[m.teamName] = [];
+    if (!teamLeadsGrouped[m.teamName]) {
+      teamLeadsGrouped[m.teamName] = [];
     }
-    teamsGrouped[m.teamName].push(m);
+    teamLeadsGrouped[m.teamName].push(m);
   });
 
   const renderCard = (member: TeamMember) => (
@@ -109,27 +114,33 @@ export const Team: React.FC = () => {
         </div>
       ) : (
         <div className="space-y-20">
-          {/* Executive Panel */}
-          <div>
-            <h2 className="font-space font-bold text-2xl sm:text-3xl text-white mb-8 border-b border-white/10 pb-3">
-              Executive Panel
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {panelMembers.map((m) => renderCard(m))}
-            </div>
-          </div>
-
-          {/* Grouped Sub-Teams */}
-          {Object.keys(teamsGrouped).map((teamName) => (
-            <div key={teamName}>
-              <h2 className="font-space font-bold text-2xl text-white mb-8 border-b border-white/10 pb-3">
-                {teamName} Team
+          {/* Executive Panel Leads */}
+          {panelLeads.length > 0 && (
+            <div>
+              <h2 className="font-space font-bold text-2xl sm:text-3xl text-white mb-8 border-b border-white/10 pb-3">
+                Executive Panel
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {teamsGrouped[teamName].map((m) => renderCard(m))}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {panelLeads.map((m) => renderCard(m))}
               </div>
             </div>
-          ))}
+          )}
+
+          {/* Grouped Sub-Team Leads */}
+          {Object.keys(teamLeadsGrouped).map((teamName) => {
+            const leadsList = teamLeadsGrouped[teamName];
+            if (leadsList.length === 0) return null;
+            return (
+              <div key={teamName}>
+                <h2 className="font-space font-bold text-2xl text-white mb-8 border-b border-white/10 pb-3">
+                  {teamName} Leads
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {leadsList.map((m) => renderCard(m))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       )}
     </div>
